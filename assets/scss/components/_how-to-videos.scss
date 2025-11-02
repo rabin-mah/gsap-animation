@@ -1,0 +1,47 @@
+.how-to-videos-block {
+	.section-heading {
+		@include media('>=widescreen') {
+			margin-bottom: 120px;
+		}
+	}
+
+	.video-lists {
+		> h3 {
+			@include media('>=desktop') {
+				margin-bottom: 60px;
+			}
+		}
+	}
+	.row {
+		row-gap: 40px;
+
+		@include media('>=desktop') {
+			row-gap: 60px;
+		}
+	}
+	.col {
+		width: 100%;
+		@include media('>=tablet') {
+			width: 50%;
+		}
+		&-wrap {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+		}
+		.video-wrap,
+		.iframe-wrap {
+			video,
+			iframe {
+				@include mask-image('assets/images/img-mask-rectangle-2x.png');
+				width: 100%;
+				height: 100%;
+				// aspect-ratio: 600 / 337;
+			}
+		}
+
+		.subtitle1 {
+			text-align: center;
+		}
+	}
+}

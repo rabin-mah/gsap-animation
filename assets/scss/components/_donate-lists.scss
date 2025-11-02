@@ -1,0 +1,103 @@
+.card-donate {
+	.card-wrap {
+		border-radius: 20px;
+		background: $white;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		height: 100%;
+		position: relative;
+
+		@include media('>=desktop') {
+			padding: 30px;
+		}
+
+		&:hover {
+			.btn-arrow {
+				color: $secondary-green;
+
+				&:after {
+					background-image: url('assets/images/icon-arrow-diagonal-hover.svg');
+				}
+			}
+		}
+
+		* {
+			margin: 0;
+		}
+
+		> a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+			font-size: 0 !important;
+
+			&:after {
+				display: none;
+			}
+		}
+
+		.icon-wrap {
+			height: 60px;
+
+			img {
+				max-height: 60px;
+			}
+		}
+
+		.text-wrap {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			.subtitle1 {
+				width: 100%;
+				min-height: 58px;
+				z-index: 0;
+				transition: 0.3s ease;
+
+				.btn-arrow {
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+}
+
+.donate-lists-block {
+	.heading-block {
+		max-width: 700px;
+		margin-inline: auto;
+
+		@include media('>=large') {
+			margin-bottom: 120px;
+		}
+
+		p {
+			max-width: 620px;
+			margin-inline: auto;
+		}
+	}
+
+	.row {
+		margin: 0 -12px;
+		row-gap: 40px;
+	}
+
+	.col {
+		padding: 0 12px;
+		width: 100%;
+
+		@include media('>=tablet') {
+			width: 50%;
+		}
+
+		@include media('>=desktop') {
+			width: 33.33%;
+		}
+	}
+}

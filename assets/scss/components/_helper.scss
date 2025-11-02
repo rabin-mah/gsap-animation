@@ -1,0 +1,220 @@
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+
+	> * {
+		padding: 0 15px;
+	}
+}
+
+.col {
+	width: 100%;
+	padding: 0 15px;
+	flex: none;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+	margin-bottom: 20px;
+
+	@include media('>=tablet') {
+		margin-bottom: 0;
+	}
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+	margin-bottom: 20px;
+
+	@include media('>=tablet') {
+		margin-bottom: 0;
+	}
+
+	& + p,
+	& + ul,
+	& + h2,
+	& + h3,
+	& + h4,
+	& + h5 {
+		@include media('<tablet') {
+			clear: both;
+		}
+	}
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+iframe {
+	vertical-align: top;
+}
+
+.img-wrap {
+	a {
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+big,
+.text-large {
+	font-size: 20px;
+}
+
+.text-medium {
+	font-size: 18px;
+}
+
+.text-normal {
+	font-size: 16px;
+}
+
+.text-small {
+	font-size: 14px;
+}
+
+.text-tiny {
+	font-size: 12px;
+}
+
+.m-0 {
+	margin: 0 !important;
+}
+
+.mt-0 {
+	margin-top: 0 !important;
+}
+
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.p-0 {
+	padding: 0 !important;
+}
+
+.pt-0,
+.no-paddingtop {
+	padding-top: 0 !important;
+}
+
+.pb-0,
+.no-paddingbottom  {
+	padding-bottom: 0 !important;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-black {
+	color: $black;
+}
+
+.text-white {
+	color :$white;
+}
+
+.hide-desktop {
+	@include media('>=desktop') {
+		display: none;
+	}
+}
+
+.hide-tablet {
+	@include media('>=tablet') {
+		display: none;
+	}
+}
+
+.hide-mobile {
+	@include media('<tablet') {
+		display: none;
+	}
+}
+
+.show-mobile {
+	@include media('>tablet') {
+		display: none;
+	}
+}
+
+.show-desktop {
+	display: none;
+	@include media('>=desktop') {
+		display: block;
+	}
+}
+
+.full-width {
+	width: 100%;
+}
+
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.img-cover {
+	position: relative;
+	padding-top: 56.25%;
+	overflow: hidden;
+	width: 100%;
+	z-index: 2;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+
+		&:hover {
+			&:before {
+				opacity: 1;
+			}
+		}
+
+		&:before {
+			content:"";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba($black, 0.3);
+			opacity: 0;
+			transition: 0.3s ease;
+		}
+	}
+}

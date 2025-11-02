@@ -1,0 +1,141 @@
+.banner {
+	// overflow: hidden;
+	position: relative;
+	z-index: 2;
+	.img-slider-bottom {
+		position: absolute;
+		bottom: -200px;
+		right: 0;
+		z-index: 2;
+
+		@include media('<desktop') {
+			max-height: 400px;
+			width: auto;
+			bottom: -100px;
+		}
+
+		@include media('<tablet') {
+			max-height: 200px;
+			width: auto;
+			bottom: -40px;
+		}
+	}
+	.container {
+		max-width: 1440px;
+		@include media('>=widescreen') {
+			padding-inline: 68px;
+		}
+	}
+	&-wrap {
+		position: relative;
+		z-index: 10;
+		.bird-img {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+	.heading-block {
+		max-width: 912px;
+		margin-inline: auto;
+		position: relative;
+		@include media('>=widescreen') {
+			margin-bottom: 100px;
+		}
+
+		p {
+			max-width: 600px;
+			margin-inline: auto;
+			font-size: 20px;
+		}
+	}
+
+	.slider-wrap {
+		position: relative;
+
+		.img-slider-top {
+			position: absolute;
+			top: -100px;
+			right: 0;
+			z-index: 2;
+
+			@include media('<tablet') {
+				max-width: 115px;
+				top: -60px;
+				right: -20px;
+			}
+		}
+
+		.banner-slider {
+			.swiper-slide {
+				img {
+
+					@include mask-image('assets/images/img-mask-rectangle-2x.png');
+				}
+			}
+		}
+
+		.swiper-pagination {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			top: 50%;
+			bottom: auto;
+			transform: translateY(-50%);
+			left: -12px;
+
+			@include media('>=large') {
+				left: -32px;
+			}
+
+			.swiper-pagination-bullet {
+				margin: 0 !important;
+			}
+		}
+	}
+
+	.link-wrap{
+		position: relative;
+		padding: 12px 0;
+		background: $primary-sky;
+		z-index: 1;
+		margin-top: -24px;
+
+		&:before,
+		&:after {
+			content:"";
+			position: absolute;
+			left: 0;
+			// width: 100vw;
+			width: 100%;
+			// background-size: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: -1;
+		}
+
+		&:before {
+			top: 0;
+			height: 16px;
+			background-image: url('assets/images/banner-text-top-pattern.png');
+		}
+
+		&:after {
+			bottom: 0;
+			height: 18px;
+			background-image: url('assets/images/banner-text-bottom-pattern.png');
+
+		}
+
+		.btn-arrow {
+			z-index: 5;
+			gap: 16px;
+			padding-left: 5%;
+
+			&:after {
+				min-height: 18px;
+				min-width: 18px;
+			}
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.icon-content-slider-block {
+	.icon-content-slider-wrap {
+		padding: 30px 0;
+	}
+}
+
+.icon-content-slider {
+	.swiper-wrapper {
+		// gap: 100px;
+	}
+	.swiper-slide {
+		// width: 324px !important;
+
+		.slide-wrap {
+			display: grid;
+			grid-template-columns: 48px 1fr;
+			gap: 20px;
+		}
+	}
+}

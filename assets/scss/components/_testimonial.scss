@@ -1,0 +1,29 @@
+.testimonials-block {}
+
+.testimonial-lists {
+	max-width: 894px;
+	margin-inline: auto;
+
+	.testimonial-list {
+		&-wrap {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+
+			& * {
+				margin: 0;
+			}
+			.testimonial-text {
+				// color: $primary-green;
+				color: $secondary-green;
+				font: 700 34px/1.1 $secondary-font;
+				text-transform: uppercase;
+
+				.active {
+					color: $secondary-green;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,120 @@
+.accordion {
+	// display: flex;
+	// flex-direction: column;
+	// row-gap: 12px;
+
+	.accordion-list {
+		// padding-block: 24px;
+		// @include media('>=desktop') {
+		// 	padding-block: 24px;
+		// }
+		&.active {
+			.title {
+				color: $secondary-green;
+				&:after {
+					// margin-top: 0;
+					background-image: url('assets/images/icon-down-hover.svg');
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		&:first-child {
+			.title {
+				padding-top: 0 !important;
+
+				&:after {
+					margin-top: -30px;
+				}
+			}
+		}
+
+		& + .accordion-list {
+			border-top: 2px solid $primary-green;
+
+			.title {
+
+			}
+		}
+
+
+		.title {
+			cursor: pointer;
+			position: relative;
+			padding: 20px 40px 20px 0;
+			margin-bottom: 0;
+			display: block;
+			color: $black;
+
+			@include media('>=tablet') {
+				padding: 34px 60px 24px 0;
+			}
+
+			@include media('>=desktop') {
+				padding: 40px 60px 40px 0;
+			}
+
+			span {
+				max-width: 720px;
+				display: block;
+			}
+
+			// &:after {
+			// 	content:"";
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	color: $black;
+			// 	right: 20px;
+			// 	width: 10px;
+			// 	height: 10px;
+			// 	border-style: solid;
+			// 	border-width: 2px 2px 0 0;
+			// 	border-color: $black $black transparent transparent;
+			// 	margin-top: -6px;
+			// 	transition: 0.3s ease;
+			// 	transform: rotate(136deg);
+
+			// 	@include media('>=tablet') {
+			// 		right: 36px;
+			// 	}
+			// }
+
+			&:after {
+				content:"";
+				position: absolute;
+				top: 50%;
+				right: 0;
+				background: url('assets/images/icon-down.svg') no-repeat;
+				width: 24px;
+				height: 24px;
+				background-size: 100%;
+				margin-top: -12px;
+				transition: 0.3s ease;
+			}
+
+			&:hover {
+				color: $secondary-green;
+				&:after {
+					background-image: url('assets/images/icon-down-hover.svg');
+				}
+			}
+		}
+
+		.slide {
+			display: none;
+			padding: 0 0 24px;
+
+			@include media('>=desktop') {
+				padding: 0 0 40px;
+			}
+
+			p {
+				margin-bottom: 18px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+

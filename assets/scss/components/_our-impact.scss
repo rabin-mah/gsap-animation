@@ -1,0 +1,146 @@
+$base-delay: 3s;
+$stagger-delay: 0.8s;
+$max-items: 10;
+
+.card-impact {
+	border: 3px solid $black;
+	padding: 20px;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	text-align: center;
+
+	.text-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		&> * {
+			margin: 0;
+		}
+	}
+}
+
+.our-impact-block {
+	&.seen {
+		.impact-lists {
+			.card-impact {
+				animation: showBox 1s ease forwards;
+				animation-delay: $base-delay;
+
+				@for $i from 2 through $max-items {
+					&:nth-child(#{$i}) {
+						animation-delay: $base-delay + ($i - 1) * $stagger-delay;
+					}
+				}
+			}
+		}
+	}
+	.row {
+		row-gap: 40px;
+		@include media('>=widescreen') {
+			margin: 0 -80px;
+		}
+	}
+
+	.col {
+		width: 100%;
+		@include media('>=widescreen') {
+			padding: 0 80px;
+		}
+	}
+
+	.col-content {
+		@include media('>=desktop') {
+			width: 45%;
+		}
+		.col-wrap {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+
+			& * {
+				margin: 0;
+			}
+		}
+	}
+	.col-lists {
+		@include media('>=desktop') {
+			width: 55%;
+		}
+	}
+	.col-lists-wrap {
+		position: relative;
+		.img-impact-list {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			object-fit: cover;
+			z-index: -1;
+		}
+	}
+	.impact-lists {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 20px;
+
+		@include media('>=640px') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media('>=desktop') {
+			grid-template-columns: repeat(3, 1fr);
+			align-items: flex-start;
+		}
+
+		.card-impact {
+			opacity: 0;
+			visibility: hidden;
+			&:nth-child(1),
+			&:nth-child(3) {
+				@include media('>=desktop') {
+					margin-top: 96px;
+				}
+			}
+
+			&:nth-child(5) {
+				@include media('>=desktop') {
+					margin-top: -95px;
+				}
+
+				@include media('>=1227px') {
+					margin-top: -120px;
+				}
+			}
+
+			&:nth-child(7) {
+				@include media('>=desktop') {
+					grid-column: 2;
+					margin-top: -118px;
+				}
+
+				@include media('>=1227px') {
+					margin-top: -142px;
+				}
+			}
+
+
+		}
+	}
+}
+
+@keyframes showBox {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}

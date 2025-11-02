@@ -1,0 +1,16 @@
+.blog-detail-block {
+	.heading-block {
+		@include media('>=desktop') {
+			margin-bottom: 100px;
+		}
+	}
+	.feature-image {
+		max-width: 704px;
+		margin: 0 auto;
+		img {
+			@include mask-image('assets/images/img-mask-square-large.png');
+			// aspect-ratio: 704/350;
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,67 @@
+/*
+Theme Name: Gsap animation
+Theme URI:
+Author: Rabindra
+Author URI:
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: Gsap animation
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+$breakpoints: (
+  'xs-phone': 320px,
+  'phone': 480px,
+  'tablet': 768px,
+  'desktop': 1024px,
+  'widescreen': 1200px,
+  'large': 1440px,
+  'extra-large': 1920px,
+);
+
+// keywords
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+
+@import 'base/fonts';
+@import 'base/variables';
+@import 'base/functions';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/typography';
+@import 'base/reset';
+@import 'base/cms-reset';
+@import 'base/forms';
+
+@import 'components/helper';
+@import 'components/common';
+@import 'components/slider';
+@import 'components/accordion';
+@import 'components/header';
+@import 'components/navigation';
+@import 'components/footer';
+@import 'components/testimonial';
+@import 'components/steps-block';
+@import 'components/image-with-content-slider';
+
+
+
+
+
+
+

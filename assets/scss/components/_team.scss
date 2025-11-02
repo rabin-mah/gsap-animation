@@ -1,0 +1,48 @@
+.card-team {
+	.card-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		.img-wrap {
+			img {
+				@include mask-image('assets/images/img-mask-square-large.png');
+				width: 100%;
+			}
+		}
+
+		.text-wrap {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+
+			& > * {
+				margin: 0;
+			}
+
+			.subtitle1 {
+				span {
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.team-lists {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 30px;
+
+	@include media('>=tablet') {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	@include media('>=desktop') {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	@include media('>=widescreen') {
+		gap: 60px 115px;
+	}
+}

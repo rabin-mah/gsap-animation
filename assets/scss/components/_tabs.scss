@@ -1,0 +1,265 @@
+.tabs-wrapper {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+  margin: 0 0 40px;
+  background: $white;
+  border-radius: 50px;
+
+  @include media('>=desktop') {
+    margin-bottom: 80px;
+  }
+
+  @include media('>=widescreen') {
+    margin-bottom: 100px;
+  }
+
+  &.hide-scrollbar {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  ul.tabs {
+    @extend %listreset;
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+
+    &.four {
+      li {
+        @include media('>=desktop') {
+          width: 25%;
+        }
+      }
+    }
+
+    &.three {
+      li {
+        @include media('>=tablet') {
+          width: 33.33%;
+        }
+      }
+    }
+
+    li {
+      position: relative;
+
+      a {
+        display: block;
+        padding: 14px 25px;
+        text-decoration: none !important;
+        color: $primary-gray;
+        z-index: 1;
+        position: relative;
+        font: 700 14px/1 $secondary-font;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-radius: 50px;
+        text-align: center;
+
+        @include media('>=tablet') {
+          font-size: 16px;
+          padding: 16px 30px;
+        }
+
+        @include media('>=desktop') {
+          font-size: 20px;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+
+      &.active a {
+        color: $white;
+      // background: $black;
+      }
+    }
+  }
+
+  .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: $black; // highlight color
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    z-index: 0;
+  }
+}
+
+.tabs-block {
+  &:not(.align-top) {
+    .tab-content-wrap {
+      .row {
+        align-items: center;
+      }
+    }
+  }
+}
+
+.tabs-container {
+  position: relative;
+  min-height: 50px;
+  .tab-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: 0.6s ease;
+    pointer-events: none;
+
+    &.active {
+      opacity: 1;
+      position: relative;
+      pointer-events: auto;
+    }
+  }
+
+  .tab-content-wrap {
+    &:not(.content-large) {
+      .col-content {
+        @include media('>=desktop') {
+          padding-right: 60px;
+        }
+
+        @include media('>=widescreen') {
+          padding-right: 80px;
+        }
+
+        @include media('>=large') {
+          padding-right: 128px;
+        }
+      }
+    }
+
+    &.content-large {
+      .col-content {
+        @include media('>=desktop') {
+          width: 49.02%;
+        }
+      }
+      .col-image {
+        @include media('>=desktop') {
+          padding-left: 60px;
+          width: 50.98%;
+        }
+
+        @include media('>=widescreen') {
+          padding-left: 80px;
+        }
+
+        @include media('>=large') {
+          padding-left: 128px;
+        }
+      }
+    }
+    .row {
+      margin: 0;
+      row-gap: 40px;
+      // align-items: center;
+    }
+    .col {
+      width: 100%;
+      padding: 0;
+
+      @include media('>=desktop') {
+        width: 50%;
+      }
+
+      .col-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        & * {
+          margin: 0;
+        }
+
+        .content-lists {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+
+          .content-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+          }
+
+        }
+
+        .text {
+          display: flex;
+          flex-direction: column;
+          // gap: 20px;
+          gap: 12px;
+
+          a {
+            text-decoration: underline;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .img-wrap {
+        img {
+          @include mask-image('assets/images/img-mask-square-large.png');
+        }
+      }
+    }
+  }
+}
+
+.open-close-tab {
+  ul.tabs {
+    @extend %listreset;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    @include media('>=desktop') {
+      // margin-top: 60px;
+    }
+
+    li {
+      a {
+        text-decoration: underline;
+        font-size: 14px;
+
+        &.active,
+        &:hover {
+          color: $secondary-green;
+        }
+      }
+    }
+  }
+
+  .tabs-container {
+    min-height: 0;
+    .tab-content {
+      font-size: 14px;
+
+      &-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      * {
+        margin: 0;
+      }
+    }
+  }
+}

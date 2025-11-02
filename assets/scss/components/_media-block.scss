@@ -1,0 +1,34 @@
+.media-block {
+	&:not(.mask-remove-img) {
+		.media-wrap {
+			.img-wrap {
+				img {
+					@include mask-image('assets/images/img-mask-rectangle-small-overlay.png');
+				}
+			}
+		}
+	}
+	.section-heading {
+		@include media('>=desktop') {
+			align-items: flex-start;
+		}
+		@include media('>=widescreen') {
+			margin-bottom: 100px;
+		}
+		.column-right {
+			&-wrap {
+				display: flex;
+				flex-direction: column;
+				gap: 30px;
+
+				& * {
+					margin: 0;
+				}
+
+				.links {
+					justify-content: flex-start;
+				}
+			}
+		}
+	}
+}

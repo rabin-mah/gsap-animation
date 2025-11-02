@@ -1,0 +1,120 @@
+.card-icon-with-title {
+	.card-wrap {
+		background: $white;
+		padding: 20px;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 20px;
+		height: 100%;
+		position: relative;
+
+		&:hover {
+			@include media('>=desktop') {
+				.icon-wrap {
+					margin-top: -10px;
+				}
+
+				.subtitle1 {
+					// margin-top: 10px;
+					// top: 10px;
+					transform: translateY(15px);
+					color: $secondary-green;
+					// font-size: inherit;
+					@include media('<tablet') {
+						font-size: 18px;
+					}
+				}
+
+				.btn-arrow {
+					color: $secondary-green;
+					// font-size: inherit;
+
+					&:after {
+						background-image: url('assets/images/icon-arrow-diagonal-hover.svg');
+					}
+				}
+			}
+		}
+
+		> a {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+			font-size: 0 !important;
+
+			&:after {
+				display: none;
+			}
+		}
+
+		.icon-wrap {
+			transition: 0.3s ease;
+		}
+
+		.subtitle1 {
+			position: relative;
+			transition: 0.3s ease;
+			margin: 0;
+			transform: translateY(0);
+			min-height: 40px;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			font-size: 20px;
+			z-index: 0;
+		}
+
+		.btn-arrow {
+			gap: 2px;
+			width: 100%;
+			justify-content: space-between;
+
+			&:after {
+				min-width: 18px;
+				min-height: 18px;
+			}
+		}
+
+	}
+}
+
+
+.icon-with-title-lists-block {
+	.heading-block {
+		max-width: 496px;
+		margin-inline: auto;
+		gap: 30px;
+
+		@include media('>=desktop') {
+			margin-bottom: 80px;
+		}
+	}
+	.row {
+		row-gap: 30px;
+	}
+
+	.col {
+		width: 100%;
+
+		@include media('>=640px') {
+			width: 50%;
+		}
+
+		@include media('>=tablet') {
+			width: 33.33%;
+		}
+
+		@include media('>=desktop') {
+			width: 25%;
+		}
+
+		@include media('>=widescreen') {
+			width: 20%;
+		}
+	}
+}

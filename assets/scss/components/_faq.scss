@@ -1,0 +1,79 @@
+.faq-block {
+	.tabs-block-wrapper {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 30px;
+
+		@include media('>=tablet') {
+			grid-template-columns: 260px 1fr;
+			gap: 40px;
+		}
+
+		@include media('>=desktop') {
+			grid-template-columns: 280px 1fr;
+			gap: 60px;
+		}
+
+		@include media('>=widescreen') {
+			grid-template-columns: 288px 1fr;
+		}
+
+		@include media('>=large') {
+			gap: 128px;
+		}
+
+
+		.tabs-wrapper {
+			border-radius: 0;
+			background: none;
+			margin: 0;
+			.tabs {
+				gap: 20px;
+
+				@include media('>=tablet') {
+					white-space: normal;
+					flex-direction: column;
+					gap: 30px;
+				}
+
+				@include media('>=desktop') {
+
+				}
+
+				li {
+					&.active {
+						a {
+							@include media('>=tablet') {
+								color: $black;
+							}
+						}
+					}
+					a {
+						@include media('>=tablet') {
+							padding: 0;
+							display: inline-block;
+							text-align: left;
+						}
+
+						&:hover {
+							@include media('>=tablet') {
+								color: $black;
+							}
+						}
+					}
+				}
+			}
+
+			.indicator {
+				@include media('>=tablet') {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.accordion {
+
+	}
+}
+

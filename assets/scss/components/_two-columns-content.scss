@@ -1,0 +1,34 @@
+.two-columns-content-block {
+	.row {
+		row-gap: 40px;
+	}
+
+	.col {
+		width: 100%;
+		@include media('>=desktop') {
+			width: 50%;
+		}
+
+		&:only-child {
+			width: 100%;
+		}
+
+		&-wrap {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+
+			* {
+				margin: 0;
+			}
+		}
+
+		ol {
+			margin-top: 0;
+		}
+	}
+
+	.links {
+		margin-top: 30px;
+	}
+}

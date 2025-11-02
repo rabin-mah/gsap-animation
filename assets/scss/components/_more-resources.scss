@@ -1,0 +1,96 @@
+.more-resources-block {
+	.row {
+		margin: 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px;
+
+		@include media('>=tablet') {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include media('>=desktop') {
+			gap: 80px;
+		}
+
+		@include media('>=widescreen') {
+			gap: 180px;
+		}
+
+		@include media('>=large') {
+			gap: 232px;
+		}
+	}
+
+	.col {
+		padding: 0;
+	}
+
+	.col-content {
+		.content-wrap {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+
+			& * {
+				margin: 0;
+			}
+
+			.text {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+			}
+		}
+	}
+
+	.col-links {
+		ul {
+			@extend %listreset;
+
+			li {
+				padding-block: 30px;
+
+				@include media('>=widescreen') {
+					padding-block: 40px;
+				}
+				& + li {
+					position: relative;
+					&:before {
+						content:"";
+						position: absolute;
+						top: 0;
+						height: 3px;
+						width: 100%;
+						background: url('assets/images/img-line-secondary-red.svg') no-repeat;
+						background-size: 100%;
+					}
+				}
+
+				&:first-child {
+					padding-top: 0;
+					.btn-arrow {
+					}
+				}
+
+				&:last-child {
+					padding-bottom: 0;
+					.btn-arrow {
+					}
+				}
+
+				.btn-arrow {
+					width: 100%;
+					justify-content: space-between;
+					gap: 16px;
+
+					span {
+						max-width: 417px;
+					}
+				}
+			}
+		}
+	}
+}
+
